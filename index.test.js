@@ -1,4 +1,4 @@
-const { flattenArray, reverseString } = require('./index');
+const { flattenArray, reverseString, isPalindrome } = require('./index');
 
 describe('flattenArray', () => {
   test('展平嵌套数组', () => {
@@ -41,5 +41,27 @@ describe('reverseString', () => {
 
   test('包含中文', () => {
     expect(reverseString('你好')).toBe('好你');
+  });
+});
+
+describe('isPalindrome', () => {
+  test('普通回文字符串', () => {
+    expect(isPalindrome('racecar')).toBe(true);
+  });
+
+  test('非回文字符串', () => {
+    expect(isPalindrome('hello')).toBe(false);
+  });
+
+  test('空字符串', () => {
+    expect(isPalindrome('')).toBe(true);
+  });
+
+  test('单字符', () => {
+    expect(isPalindrome('a')).toBe(true);
+  });
+
+  test('忽略大小写和特殊字符', () => {
+    expect(isPalindrome('A man, a plan, a canal: Panama')).toBe(true);
   });
 });

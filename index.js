@@ -6,4 +6,9 @@ function reverseString(str) {
   return str.split('').reverse().join('');
 }
 
-module.exports = { flattenArray, reverseString };
+function isPalindrome(str) {
+  const cleaned = str.toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g, '');
+  return cleaned === cleaned.split('').reverse().join('');
+}
+
+module.exports = { flattenArray, reverseString, isPalindrome };
