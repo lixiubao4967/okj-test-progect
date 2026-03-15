@@ -2,4 +2,8 @@ function flattenArray(arr) {
   return arr.flat(Infinity);
 }
 
-module.exports = { flattenArray };
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+module.exports = { flattenArray, reverseString };
